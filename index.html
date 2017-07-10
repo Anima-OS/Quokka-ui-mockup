@@ -17,6 +17,7 @@
   <link href="css/theme.css" type="text/css" rel="stylesheet" />
 
   <script src="jquery.min.js"></script>
+  <script src="jquery-ui.min.js"></script>
 
 </head>
 
@@ -54,7 +55,7 @@
 
   <div class="window-container">
     <!-- Window [Start] -->
-    <div class="window linux-ubuntu title-bar-enabled" id="window-main">
+    <div class="window linux-ubuntu title-bar-enabled draggable" id="window-main">
 
       <!-- Window - Inner [Start] -->
       <div class="window-inner">
@@ -470,6 +471,12 @@
   </svg>
 
   <script>
+
+    /*--- Draggable ---*/
+    $( function() {
+      $( ".draggable" ).draggable({cancel: ".toolbars-container"});
+    });
+
     /*--- Maximized ---*/
     $(".fullscreenZoomMax").mouseup(function () {
       $(".window-container").toggleClass("maximized");
