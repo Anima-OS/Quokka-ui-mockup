@@ -15,10 +15,12 @@
   <link href="css/content.css" type="text/css" rel="stylesheet" />
   <link href="css/option-toggles.css" type="text/css" rel="stylesheet" />
   <link href="css/theme.css" type="text/css" rel="stylesheet" />
+  <link href="css/jquery-terminal.css" rel="stylesheet" />
 
   <script src="jquery.min.js"></script>
   <script src="jquery-ui.min.js"></script>
   <script src="jquery-ui-touch.min.js"></script>
+  <script src="jquery-terminal.min.js"></script>
 
 </head>
 
@@ -174,6 +176,9 @@
                 <div class="icon"></div>
               </div>
               <div class="toolbar-button sidebar badged badged-attention" title="Show the sidebar">
+                <div class="icon"></div>
+              </div>
+              <div class="toolbar-button terminalbutton" title="Open administrative terminal">
                 <div class="icon"></div>
               </div>
               <div class="toolbar-button overflow" title="More stuff here">
@@ -458,6 +463,7 @@
     </div>
     <!-- Window [End] -->
   </div>
+  <div id="term_1" class="draggable surface terminal hidden"></div>
 
   <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
     <clipPath id="badge-cutout">
@@ -466,10 +472,27 @@
   </svg>
 
   <script>
+    /*--- Terminal emulator ---*/
+    jQuery(function ($, undefined) {
+      $('#term_1').terminal(function (command) {
+        if (command !== '') {
+          var result = window.eval(command);
+          if (result != undefined) {
+            this.echo(String(result));
+          }
+        }
+      }, {
+          greetings: 'Welcome to the terminal!',
+          name: 'term1',
+          height: 200,
+          width: 450,
+          prompt: 'js> '
+        });
+    });
 
     /*--- Draggable ---*/
-    $( function() {
-      $( ".draggable" ).draggable({cancel: ".toolbars-container"});
+    $(function () {
+      $(".draggable").draggable({ cancel: ".toolbars-container" });
     });
 
     /*--- Maximized ---*/
@@ -477,7 +500,6 @@
       $(".window-container").toggleClass("maximized");
       $(".option-toggles-container").toggleClass("hide");
     });
-
 
     /*--- Fullscreen ---*/
     document.addEventListener("keydown", function (e) {
@@ -586,6 +608,13 @@
       $(this).toggleClass("toggled");
       $(".sidebar-container").toggleClass("hidden");
       $("#toggle-sidebar").toggleClass("toggled");
+    });
+
+    /*--- Open jQuery terminal ---*/
+
+    $(".toolbar-button.terminalbutton").mouseup(function () {
+      $(this).toggleClass("toggled");
+      $(".surface").toggleClass("hidden");
     });
 
 

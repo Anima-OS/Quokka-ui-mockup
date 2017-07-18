@@ -143,6 +143,7 @@
 .window.theme-dark .toolbar-button.bookmark > .icon { background-image: url("../images-general/bookmark-16-outline-inverted.svg"); }
 .window.theme-dark .toolbar-button.library > .icon { background-image: url("../images-general/library-16-inverted.svg"); }
 .window.theme-dark .toolbar-button.sidebar > .icon { background-image: url("../images-general/sidebar-16-inverted.svg"); }
+.window.theme-dark .toolbar-button.terminalbutton > .icon { background-image: url("../images-general/terminal-16-inverted.svg"); }
 .window.theme-dark .toolbar-button.overflow > .icon { background-image: url("../images-general/overflow-16-inverted.svg"); }
 .window.theme-dark .toolbar-button.menu > .icon { background-image: url("../images-general/menu-16-inverted.svg"); }
 
@@ -412,6 +413,7 @@
 .window.theme-highcontrast .toolbar-button.bookmark > .icon { background-image: url("../images-context-fill/bookmark-16-outline.svg"); }
 .window.theme-highcontrast .toolbar-button.library > .icon { background-image: url("../images-context-fill/library-16.svg"); }
 .window.theme-highcontrast .toolbar-button.sidebar > .icon { background-image: url("../images-context-fill/sidebar-16.svg"); }
+.window.theme-highcontrast .toolbar-button.terminalbutton > .icon { background-image: url("../images-context-fill/terminal16.svg"); }
 .window.theme-highcontrast .toolbar-button.overflow > .icon { background-image: url("../images-context-fill/overflow-16.svg"); }
 .window.theme-highcontrast .toolbar-button.menu > .icon { background-image: url("../images-context-fill/menu-16.svg"); }
 .window.theme-highcontrast .toolbar-button.site-identity .icon.info { background-image: url("../images-context-fill/info-16.svg"); }

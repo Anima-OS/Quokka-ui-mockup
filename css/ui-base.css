@@ -25,6 +25,24 @@
   padding: 80px;
 }
 
+.surface {
+  border: 10px solid rgba(0,0,0,0.0);
+  border-radius: 15px;
+  background-color: rgba(0,0,0,0.8);
+  -moz-appearance: none;
+  z-index: 20;
+}
+
+.terminal {
+  width:500px;
+  height:100px;
+  border:1px solid #000;
+}
+
+.terminal.hidden {
+  display: none;
+}
+
 .window {
   display: flex;
   
@@ -449,6 +467,7 @@
 .toolbar-button.bookmark > .icon { background-image: url("../images-general/bookmark-16-outline.svg"); }
 .toolbar-button.library > .icon { background-image: url("../images-general/library-16.svg"); }
 .toolbar-button.sidebar > .icon { background-image: url("../images-general/sidebar-16.svg"); }
+.toolbar-button.terminalbutton > .icon { background-image: url("../images-general/terminal-16.svg"); }
 .toolbar-button.overflow > .icon { background-image: url("../images-general/overflow-16.svg"); }
 .toolbar-button.menu > .icon { background-image: url("../images-general/menu-16.svg"); }
 
