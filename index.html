@@ -19,6 +19,7 @@
 
   <script src="jquery.min.js"></script>
   <script src="jquery-ui.min.js"></script>
+  <script src="agnostic-shell.min.js"></script>
   <script src="jquery-ui-touch.min.js"></script>
   <script src="jquery-terminal.min.js"></script>
 
@@ -474,11 +475,16 @@
   <script>
     /*--- Terminal emulator ---*/
     jQuery(function ($, undefined) {
-      $('#term_1').terminal(function (command) {
+      $('#term_1').terminal(function (command, terminal) {
+        var shell = agnostic.createInteractiveShell();
         if (command !== '') {
-          var result = window.eval(command);
-          if (result != undefined) {
-            this.echo(String(result));
+          var shell_command = agnostic.str_utils.trimWhitespace(command);
+          var result = shell.execute(shell_command);
+          if ("stderr" in result) {
+              terminal.error(result.stderr.join("\n"));
+          }
+          if ("stdout" in result) {
+            terminal.echo(result.stdout.join("\n"));
           }
         }
       }, {
@@ -486,7 +492,7 @@
           name: 'term1',
           height: 200,
           width: 450,
-          prompt: 'js> '
+          prompt: '$'
         });
     });
 
