@@ -38,7 +38,10 @@
               0 1px 0 #626055 inset;
 }
 
-
+/* --Surface Controls (mimick window controls, for the most part)-- */
+.surface-controls-container {
+  margin: 0 0 0 0px;
+}
 
 /* --Window Controls-- */
 .window-controls-container {
@@ -78,7 +81,7 @@
 }
 
 .window-control.close {
-  background-image: linear-gradient(#f28462, #da4e1d);
+  background-image: linear-gradient(#ffffff, #da4e1d);
 }
 .window-control.close:hover {
   background-image: linear-gradient(#f99f85, #e55726);

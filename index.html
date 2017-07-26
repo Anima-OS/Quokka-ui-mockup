@@ -464,7 +464,15 @@
     </div>
     <!-- Window [End] -->
   </div>
-  <div id="term_1" class="draggable surface terminal hidden"></div>
+  <div class="draggable terminal-container ui-widget-content surface hidden">
+    <div class="surface-controls-container">
+      <span class="window-control"></span>
+      <span class="window-control close"></span>
+      <span class="icon"></span>
+      <span>Terminal</span>
+    </div>
+    <div id="term_1"></div>
+  </div>
 
   <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
     <clipPath id="badge-cutout">
@@ -481,7 +489,7 @@
           var shell_command = agnostic.str_utils.trimWhitespace(command);
           var result = shell.execute(shell_command);
           if ("stderr" in result) {
-              terminal.error(result.stderr.join("\n"));
+            terminal.error(result.stderr.join("\n"));
           }
           if ("stdout" in result) {
             terminal.echo(result.stdout.join("\n"));
@@ -498,7 +506,7 @@
 
     /*--- Draggable ---*/
     $(function () {
-      $(".draggable").draggable({ cancel: ".toolbars-container" });
+      $(".draggable").draggable({ cancel: ".toolbars-container , .terminal-wrapper , #term_1" });
     });
 
     /*--- Maximized ---*/

@@ -33,14 +33,16 @@
   z-index: 20;
 }
 
-.terminal {
-  width:500px;
-  height:100px;
-  border:1px solid #000;
+.terminal-container {
+  color: var(--color-chrome-tabs-foreground);
 }
 
-.terminal.hidden {
+.terminal-container.hidden {
   display: none;
+}
+
+#term_1 {
+   background-color: rgba(0,0,0,0.0);
 }
 
 .window {
@@ -67,7 +69,14 @@
   flex-direction: column;
 }
 
-
+/* --Surface Controls (mimick window controls, for the most part)-- */
+.surface-controls-container {
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  transition-duration: 250ms;
+  transition-timing-function: var(--animation-curve);
+}
 
 /* --Window Controls-- */
 .window-controls-container {
