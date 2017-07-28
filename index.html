@@ -467,11 +467,11 @@
   <div class="draggable terminal-container ui-widget-content surface hidden">
     <div class="surface-controls-container">
       <span class="window-control"></span>
-      <span class="window-control close"></span>
+      <span class="window-control close terminalClose"></span>
       <span class="icon"></span>
       <span>Terminal</span>
     </div>
-    <div id="term_1"></div>
+    <div id="term_1" class="terminalOpen"></div>
   </div>
 
   <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
@@ -513,6 +513,19 @@
     $(".fullscreenZoomMax").mouseup(function () {
       $(".window-container").toggleClass("maximized");
       $(".option-toggles-container").toggleClass("hide");
+    });
+
+    /*--- Terminal surface transitions ---*/
+    $(".terminalClose").mouseup(function () {
+      $(".surface").toggleClass("surface-transition");
+      $(".toolbar-button.terminalbutton").toggleClass("badged");
+    });
+
+    $(".terminalOpen").mouseup(function () {
+      if ($(".surface").hasClass("surface-transition")) {
+        $(".surface").removeClass("surface-transition");
+        $(".toolbar-button.terminalbutton").toggleClass("badged");
+      }
     });
 
     /*--- Fullscreen ---*/
@@ -628,7 +641,13 @@
 
     $(".toolbar-button.terminalbutton").mouseup(function () {
       $(this).toggleClass("toggled");
+      // $(this).toggleClass("badged");
       $(".surface").toggleClass("hidden");
+      $(".surface").removeClass("surface-transition");
+      if ($(".surface").hasClass("surface-transition")) {
+        $(".surface").removeClass("surface-transition");
+        $(".toolbar-button.terminalbutton").toggleClass("badged");
+      }
     });
 
 
