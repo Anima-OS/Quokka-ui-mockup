@@ -15,6 +15,7 @@
   <link href="css/content.css" type="text/css" rel="stylesheet" />
   <link href="css/option-toggles.css" type="text/css" rel="stylesheet" />
   <link href="css/theme.css" type="text/css" rel="stylesheet" />
+  <link href="css-panel/panel.css" type="text/css" rel="stylesheet" />
   <link href="css/jquery-terminal.css" rel="stylesheet" />
 
   <script src="jquery.min.js"></script>
@@ -186,8 +187,45 @@
                 <div class="icon"></div>
               </div>
               <div class="toolbar-separator"></div>
-              <div class="toolbar-button menu badged badged-update" title="Open menu">
+              <div class="toolbar-button menu badged badged-update" title="Open menu" onclick="Testopen();">
                 <div class="icon"></div>
+                <div class="newtab-customize-panel-container">
+                  <div class="newtab-customize-panel" orient="vertical">
+                    <div id="newtab-customize-panel-anchor"></div>
+                    <div id="newtab-customize-panel-inner-wrapper">
+                      <div class="newtab-customize-complex-option">
+                        <div id="newtab-customize-classic" class="newtab-customize-panel-superitem newtab-customize-panel-item selectable" selected="true">
+                          <label>Show your top sites</label>
+                        </div>
+                        <div id="newtab-customize-enhanced" class="newtab-customize-panel-subitem" selected="true">
+                          <label class="checkbox"></label>
+                          <label>Include suggested sites</label>
+                        </div>
+                      </div>
+                      <div id="newtab-customize-blank" class="newtab-customize-panel-item selectable">
+                        <label>Show blank page</label>
+                      </div>
+                      <div id="newtab-customize-learn" class="newtab-customize-panel-item">
+                        <label>Learn about New Tab</label>
+                      </div>
+                      <div class="newtab-customize-complex-option">
+                        <div id="newtab-customize-classic" class="newtab-customize-panel-superitem newtab-customize-panel-item selectable" selected="true">
+                          <label>Show your top sites</label>
+                        </div>
+                        <div id="newtab-customize-enhanced" class="newtab-customize-panel-subitem" selected="true">
+                          <label class="checkbox"></label>
+                          <label>Include suggested sites</label>
+                        </div>
+                      </div>
+                      <div id="newtab-customize-blank" class="newtab-customize-panel-item selectable">
+                        <label>Show blank page</label>
+                      </div>
+                      <div id="newtab-customize-learn" class="newtab-customize-panel-item">
+                        <label>Learn about New Tab</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="toolbar-bookmarks hidden">
@@ -526,6 +564,10 @@
         $(".surface").removeClass("surface-transition");
         $(".toolbar-button.terminalbutton").toggleClass("badged");
       }
+    });
+    
+    $(".toolbar-button.menu").mouseup(function () {
+      $(".newtab-customize-panel").toggleClass("newtab-customize-panel-open")
     });
 
     /*--- Fullscreen ---*/
