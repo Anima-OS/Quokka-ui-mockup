@@ -36,7 +36,7 @@
 .newtab-customize-panel {
     z-index: 999;
     margin-top: 20px;
-    min-width: 270px;
+    min-width: 340px;
     position: absolute;
     top: 100%;
     right: -35px;
@@ -79,7 +79,7 @@
   font-weight: 600;
   cursor: default;
   border-radius: 5px 5px 0px 0px;
-  max-width: 300px;
+  max-width: 600px;
   overflow: hidden;
   display: table-cell;
   border-top: none;
@@ -105,7 +105,7 @@
   padding-inline-start: 40px;
   font-size: 14px;
   cursor: pointer;
-  max-width: 300px;
+  max-width: 600px;
 }
 
 .newtab-customize-panel-item:not(:first-child) {
@@ -124,7 +124,6 @@
 .newtab-customize-complex-option {
   display: block;
   text-align: start;
-  background-color: #F9F9F9;
 }
 
 .newtab-customize-panel-item[selected]:dir(rtl){
@@ -151,7 +150,7 @@
   padding: 0px 15px 15px 15px;
   padding-inline-start: 40px;
   display: block;
-  max-width: 300px;
+  max-width: 600px;
 }
 
 .newtab-customize-panel-subitem > label {
@@ -159,6 +158,17 @@
   line-height: 20px;
   vertical-align: middle;
   max-width: 225px;
+}
+
+.menuItem1 {
+  padding:0px 0 0px 5px; margin-bottom:-1px; 
+  border-top:1px solid rgba(24,25,26,0.14); 
+  border-bottom:1px solid transparent; 
+  border-right:0 none rgb(0,0,0); 
+  border-left:0 none rgb(0,0,0);
+  width: calc((22.35em / 3 - 0.1px));
+  height: calc(51px + 2.2em);
+  background: transparent;
 }
 
 .newtab-customize-panel-superitem {
@@ -170,7 +180,6 @@
 }
 
 .newtab-customize-panel-item[selected] {
-  background: url("chrome://global/skin/menu/shared-menu-check-active.svg") no-repeat transparent;
   background-size: 16px 16px;
   background-position: 15px 15px;
   color: black;
@@ -189,4 +198,14 @@
   background-size: 9px 9px;
   background-position: center;
   color: #333333;
+}
+
+.menuItem1:hover {
+  background-color: #EFEFEF;
+  border: solid #E3E3E3 1px;
+}
+
+.menuItem1:hover:active {
+  background-color: #E8E8E8;
+  border: solid #E3E3E3 1px;
 }

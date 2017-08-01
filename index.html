@@ -194,34 +194,46 @@
                     <div id="newtab-customize-panel-anchor"></div>
                     <div id="newtab-customize-panel-inner-wrapper">
                       <div class="newtab-customize-complex-option">
-                        <div id="newtab-customize-classic" class="newtab-customize-panel-superitem newtab-customize-panel-item selectable" selected="true">
-                          <label>Show your top sites</label>
-                        </div>
-                        <div id="newtab-customize-enhanced" class="newtab-customize-panel-subitem" selected="true">
-                          <label class="checkbox"></label>
-                          <label>Include suggested sites</label>
+                        <div id="newtab-customize-classic" class="newtab-customize-panel-superitem newtab-customize-panel-item newtab-customize-panel-subitem"
+                          selected="true">
+                          <button class="menuItem1">
+                            <img src="css-panel/new-window.svg"></img>
+                            </p>
+                            <label>New Window</label>
+                          </button>
+                          <button class="menuItem1">
+                            <img src="css-panel/private-browsing.svg"></img>
+                            </p>
+                            <label>Private Browsing</label>
+                          </button>
+                          <button class="menuItem1">
+                            <img src="css-panel/save.svg"></img>
+                            </p>
+                            <label>Save Page</label>
+                          </button>
+                          <!--<button class="menuItem1"></button>
+                          <button class="menuItem1"></button>-->
                         </div>
                       </div>
                       <div id="newtab-customize-blank" class="newtab-customize-panel-item selectable">
-                        <label>Show blank page</label>
+
                       </div>
                       <div id="newtab-customize-learn" class="newtab-customize-panel-item">
-                        <label>Learn about New Tab</label>
+
                       </div>
                       <div class="newtab-customize-complex-option">
                         <div id="newtab-customize-classic" class="newtab-customize-panel-superitem newtab-customize-panel-item selectable" selected="true">
-                          <label>Show your top sites</label>
+
                         </div>
                         <div id="newtab-customize-enhanced" class="newtab-customize-panel-subitem" selected="true">
-                          <label class="checkbox"></label>
-                          <label>Include suggested sites</label>
+
+
                         </div>
                       </div>
                       <div id="newtab-customize-blank" class="newtab-customize-panel-item selectable">
-                        <label>Show blank page</label>
+
                       </div>
                       <div id="newtab-customize-learn" class="newtab-customize-panel-item">
-                        <label>Learn about New Tab</label>
                       </div>
                     </div>
                   </div>
@@ -565,8 +577,8 @@
         $(".toolbar-button.terminalbutton").toggleClass("badged");
       }
     });
-    
-    $(".toolbar-button.menu").mouseup(function () {
+
+    $(".toolbar-button.menu").mouseup(function (event) {
       $(".newtab-customize-panel").toggleClass("newtab-customize-panel-open")
     });
 

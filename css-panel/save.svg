@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 18 18" class="fieldtext">
+<style>
+
+.fieldtext {
+  fill: -moz-fieldtext;
+  fill-opacity: .5;
+}
+
+@media (-moz-windows-default-theme: 0) {
+  /* more opacity for high-contrast themes */
+  .fieldtext {
+    fill-opacity: .8;
+  }
+}
+
+.highlighttext {
+  fill: highlighttext;
+  fill-opacity: 1;
+}
+
+.black {
+  fill: black;
+  fill-opacity: .6;
+}
+
+.white {
+  fill: white;
+  fill-opacity: .7;
+
+      g {
+      display: none;
+    }
+    g:target {
+      display: inline;
+    }
+}
+
+</style>
+  <path d="M13.5,16h-9C3.7,16,3,15.3,3,14.5v-11 C3,2.7,3.7,2,4.5,2H12l3,3v9.5C15,15.3,14.3,16,13.5,16z M11,2.7V6h3.3L11,2.7z" />
+</svg>
